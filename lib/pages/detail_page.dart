@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_fluffy/util.dart';
 import 'package:flutter_fluffy/widgets/bold_text.dart';
 import 'package:flutter_fluffy/widgets/normal_text.dart';
@@ -24,9 +25,24 @@ class DetailPage extends StatefulWidget {
   _DetailPageState createState() => _DetailPageState();
 }
 
-class _DetailPageState extends State<DetailPage> {
+class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
   final repoUrl = 'https://github.com/aqwert/flutterhack19';
   bool haveLiked = false;
+
+  AnimationController controller;
+  Animation<double> animation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 750), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+    controller.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,79 +83,86 @@ class _DetailPageState extends State<DetailPage> {
               tag: widget.id,
               child: Image.asset(widget.imageUrl),
             ),
-            ListTile(
-              leading: Icon(
-                Icons.account_circle,
-                size: 36,
-              ),
-              title: BoldText(widget.title),
-              subtitle: NormalText(widget.author),
-            ),
-            Wrap(
-              spacing: 8,
-              runSpacing: 0,
-              children: <Widget>[
-                Chip(
-                  label: NormalText('Potato'),
-                ),
-                Chip(
-                  label: NormalText('Jelly'),
-                ),
-                Chip(
-                  label: NormalText('Mobile'),
-                ),
-                Chip(
-                  label: NormalText('Onboarding'),
-                ),
-              ],
-            ),
-            ListTile(
-              leading: Icon(Icons.calendar_today, size: 24),
-              title: NormalText('Last updated 24/09/2019'),
-            ),
-            ListTile(
-              leading: Icon(Icons.check_circle, size: 24),
-              title: NormalText('Production ready'),
-            ),
-            ListTile(
-              leading: Icon(Icons.perm_device_information, size: 24),
-              title: NormalText('Built with Flutter 1.5'),
-            ),
-            ListTile(
-              leading: Icon(Icons.devices, size: 24),
-              title: NormalText('Built for Mobile, Web, Dektop'),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            FloatingActionButton.extended(
-              backgroundColor: appColor,
-              icon: Icon(Icons.code),
-              label: BoldText('VIEW REPOSITORY'),
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                        title: new BoldText("See Awesome"),
-                        content: new NormalText(
-                            "Open the awesome code for this widget"),
-                        actions: <Widget>[
-                          FlatButton(
-                              child: const NormalText(
-                                'TAKE ME THERE',
-                                color: appColor,
-                              ),
-                              onPressed: () async {
-                                _launchURL();
-                                Navigator.of(context).pop();
-                              }),
-                        ],
+            FadeTransition(
+              opacity: animation,
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    leading: Icon(
+                      Icons.account_circle,
+                      size: 36,
+                    ),
+                    title: BoldText(widget.title),
+                    subtitle: NormalText(widget.author),
+                  ),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 0,
+                    children: <Widget>[
+                      Chip(
+                        label: NormalText('Potato'),
                       ),
-                );
-              },
-            ),
-            SizedBox(
-              height: 30,
+                      Chip(
+                        label: NormalText('Jelly'),
+                      ),
+                      Chip(
+                        label: NormalText('Mobile'),
+                      ),
+                      Chip(
+                        label: NormalText('Onboarding'),
+                      ),
+                    ],
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.calendar_today, size: 24),
+                    title: NormalText('Last updated 24/09/2019'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.check_circle, size: 24),
+                    title: NormalText('Production ready'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.perm_device_information, size: 24),
+                    title: NormalText('Built with Flutter 1.5'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.devices, size: 24),
+                    title: NormalText('Built for Mobile, Web, Dektop'),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  FloatingActionButton.extended(
+                    backgroundColor: appColor,
+                    icon: Icon(Icons.code),
+                    label: BoldText('VIEW REPOSITORY'),
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                              title: new BoldText("See Awesome"),
+                              content: new NormalText(
+                                  "Open the awesome code for this widget"),
+                              actions: <Widget>[
+                                FlatButton(
+                                    child: const NormalText(
+                                      'TAKE ME THERE',
+                                      color: appColor,
+                                    ),
+                                    onPressed: () async {
+                                      _launchURL();
+                                      Navigator.of(context).pop();
+                                    }),
+                              ],
+                            ),
+                      );
+                    },
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
