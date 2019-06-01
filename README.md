@@ -23,3 +23,10 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.dev/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
+
+## Special Thanks to
+
+[Kayee](https://github.com/kayeew) and [Walter](https://github.com/waltzaround) for being part of this great team and being awesome.
+
+And [GDG Auckland](https://www.meetup.com/GDGAuckland) for hosting Flutter Hack 19
+
