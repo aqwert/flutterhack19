@@ -41,6 +41,19 @@ flutter:
   # assets:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
+
+assets:
+  - images/1.gif
+  - images/2.gif
+  - images/3.gif
+  - images/4.gif
+  - images/5.gif
+  - images/6.gif
+  - images/7.gif
+  - images/8.gif
+  - images/9.gif
+  - images/10.gif
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
@@ -64,7 +77,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-  fonts:
+fonts:
     - family: Object Sans
       fonts:
         - asset: fonts/ObjectSans-Regular.otf

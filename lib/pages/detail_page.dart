@@ -29,8 +29,8 @@ class DetailPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Image.network(
-              'https://placeimg.com/640/640/tech',
+            Image.asset(
+              'images/1.gif',
               fit: BoxFit.fitWidth,
             ),
             ListTile(
