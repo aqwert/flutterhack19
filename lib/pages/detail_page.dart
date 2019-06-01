@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
-  DetailPage({this.title, this.author, this.likes, this.shares});
+  DetailPage({this.title, this.author, this.likes, this.shares, this.imageUrl});
 
   final String title;
   final String author;
   final int likes;
   final int shares;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +30,7 @@ class DetailPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Image.asset(
-              'images/1.gif',
-            ),
+            Image.asset(imageUrl),
             ListTile(
               leading: Icon(
                 Icons.widgets,

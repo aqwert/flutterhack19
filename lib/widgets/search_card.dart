@@ -4,12 +4,13 @@ import 'package:flutter_fluffy/widgets/bold_text.dart';
 import 'package:flutter_fluffy/widgets/normal_text.dart';
 
 class SearchCard extends StatelessWidget {
-  SearchCard({this.title, this.author, this.likes, this.shares});
+  SearchCard({this.title, this.author, this.likes, this.shares, this.imageUrl});
 
   final String title;
   final String author;
   final int likes;
   final int shares;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +27,11 @@ class SearchCard extends StatelessWidget {
                           author: author,
                           likes: likes,
                           shares: shares,
+                          imageUrl: imageUrl,
                         ),
                   ),
                 ),
-            child: Image.network(
-              'https://placeimg.com/640/480/any',
-              fit: BoxFit.fitWidth,
-            ),
+            child: Image.asset(imageUrl),
           ),
           ListTile(
             leading: Icon(
