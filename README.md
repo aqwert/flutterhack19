@@ -5,7 +5,7 @@
 
 # Fluffy
 
-Fluffy is a dart app that makes it easy to find and share awesome flutter widgets. 
+Fluffy is a Flutter app that makes it easy to find and share awesome Flutter widgets. 
 Hopefully, it will help you build better things by making it easy to sort through cool widgets. We shall see.
 
 
