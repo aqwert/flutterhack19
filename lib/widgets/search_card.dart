@@ -36,7 +36,7 @@ class SearchCard extends StatelessWidget {
           ListTile(
             isThreeLine: true,
             leading: Icon(
-              Icons.account_circle,
+              Icons.widgets,
               size: 36,
             ),
             title: new BoldText(title),
@@ -52,14 +52,20 @@ class SearchCard extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 8),
                     child: Row(
                       children: <Widget>[
-                        Icon(Icons.thumb_up),
+                        Icon(
+                          Icons.star,
+                          size: 16,
+                        ),
                         NormalText('$likes'),
                       ],
                     ),
                   ),
                   Row(
                     children: <Widget>[
-                      Icon(Icons.share),
+                      Icon(
+                        Icons.share,
+                        size: 16,
+                      ),
                       NormalText('$shares'),
                     ],
                   )
