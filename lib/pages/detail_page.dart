@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fluffy/widgets/bold_text.dart';
 import 'package:flutter_fluffy/widgets/normal_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DetailPage extends StatefulWidget {
   DetailPage(
@@ -23,6 +24,7 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
+  final repoUrl = 'https://github.com/aqwert/flutterhack19';
   bool haveLiked = false;
   @override
   Widget build(BuildContext context) {
@@ -53,7 +55,7 @@ class _DetailPageState extends State<DetailPage> {
               Icons.share,
               color: Colors.white,
             ),
-            onPressed: () => print('Share'),
+            onPressed: () => print('share'),
           ),
         ],
       ),
@@ -122,12 +124,14 @@ class _DetailPageState extends State<DetailPage> {
                             "Open the awesome code for this widget"),
                         actions: <Widget>[
                           FlatButton(
-                            child: const NormalText(
-                              'TAKE ME THERE',
-                              color: Colors.pinkAccent,
-                            ),
-                            onPressed: () => Navigator.of(context).pop(),
-                          ),
+                              child: const NormalText(
+                                'TAKE ME THERE',
+                                color: Colors.pinkAccent,
+                              ),
+                              onPressed: () async {
+                                _launchURL();
+                                Navigator.of(context).pop();
+                              }),
                         ],
                       ),
                 );
@@ -140,5 +144,13 @@ class _DetailPageState extends State<DetailPage> {
         ),
       ),
     );
+  }
+
+  _launchURL() async {
+    if (await canLaunch(repoUrl)) {
+      await launch(repoUrl);
+    } else {
+      throw 'Could not launch $repoUrl';
+    }
   }
 }
