@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_fluffy/widgets/bold_text.dart';
 import 'package:flutter_fluffy/widgets/normal_text.dart';
 
-class DetailPage extends StatelessWidget {
+class DetailPage extends StatefulWidget {
   DetailPage(
       {this.title,
       this.author,
@@ -19,19 +19,40 @@ class DetailPage extends StatelessWidget {
   final String id;
 
   @override
+  _DetailPageState createState() => _DetailPageState();
+}
+
+class _DetailPageState extends State<DetailPage> {
+  bool haveLiked = false;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: NormalText('Fluffy'),
+        title: BoldText('Fluffy'),
         actions: <Widget>[
-          IconButton(
-            tooltip: 'Like',
-            icon: const Icon(Icons.thumb_up),
-            onPressed: () => print('Like'),
+          Builder(
+            builder: (context) => IconButton(
+                tooltip: 'Like',
+                icon: Icon(
+                  Icons.thumb_up,
+                  color: haveLiked ? Colors.deepPurple : Colors.white,
+                ),
+                onPressed: () {
+                  bool showSnack = !haveLiked;
+                  setState(() => haveLiked = !haveLiked);
+                  if (showSnack) {
+                    Scaffold.of(context).showSnackBar(SnackBar(
+                      content: NormalText('Awesome Like'),
+                    ));
+                  }
+                }),
           ),
           IconButton(
             tooltip: 'Share',
-            icon: const Icon(Icons.share),
+            icon: const Icon(
+              Icons.share,
+              color: Colors.white,
+            ),
             onPressed: () => print('Share'),
           ),
         ],
@@ -40,16 +61,16 @@ class DetailPage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Hero(
-              tag: id,
-              child: Image.asset(imageUrl),
+              tag: widget.id,
+              child: Image.asset(widget.imageUrl),
             ),
             ListTile(
               leading: Icon(
                 Icons.account_circle,
                 size: 36,
               ),
-              title: BoldText(title),
-              subtitle: NormalText(author),
+              title: BoldText(widget.title),
+              subtitle: NormalText(widget.author),
             ),
             Wrap(
               spacing: 8,
