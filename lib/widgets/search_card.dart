@@ -34,6 +34,7 @@ class SearchCard extends StatelessWidget {
             child: Image.asset(imageUrl),
           ),
           ListTile(
+            isThreeLine: true,
             leading: Icon(
               Icons.widgets,
               size: 36,

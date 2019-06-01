@@ -77,10 +77,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-fonts:
-  - family: Object Sans
-    fonts:
-      - asset: fonts/ObjectSans-Regular.otf
-        weight: 400
-      - asset: fonts/ObjectSans-Heavy.otf
-        weight: 700
+  fonts:
+    - family: Object Sans
+      fonts:
+        - asset: fonts/ObjectSans-Regular.otf
+          weight: 400
+        - asset: fonts/ObjectSans-Heavy.otf
+          weight: 700
