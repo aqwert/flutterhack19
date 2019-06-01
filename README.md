@@ -1,6 +1,13 @@
-# flutter_fluffy
+<p align="center">
+  <img src="https://i.imgur.com/XcyTP6K.png"/>
+</p>
 
-A new Flutter project.
+
+# Fluffy
+
+Fluffy is a dart app that makes it easy to find and share awesome flutter widgets. 
+Hopefully, it will help you build better things by making it easy to sort through cool widgets. We shall see.
+
 
 ## Getting Started
 
