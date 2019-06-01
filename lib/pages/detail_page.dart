@@ -79,8 +79,9 @@ class DetailPage extends StatelessWidget {
               height: 30,
             ),
             FloatingActionButton.extended(
+              backgroundColor: Colors.pinkAccent,
               icon: Icon(Icons.add),
-              label: NormalText('VIEW REPOSITORY'),
+              label: BoldText('VIEW REPOSITORY'),
               onPressed: () {
                 showDialog(
                   context: context,
@@ -90,7 +91,10 @@ class DetailPage extends StatelessWidget {
                             "Open the awesome code for this widget"),
                         actions: <Widget>[
                           FlatButton(
-                            child: const NormalText('TAKE ME THERE'),
+                            child: const NormalText(
+                              'TAKE ME THERE',
+                              color: Colors.pinkAccent,
+                            ),
                             onPressed: () => Navigator.of(context).pop(),
                           ),
                         ],

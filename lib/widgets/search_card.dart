@@ -72,11 +72,17 @@ class SearchCard extends StatelessWidget {
               alignment: MainAxisAlignment.start,
               children: <Widget>[
                 FlatButton(
-                  child: const NormalText('DEMO'),
+                  child: NormalText(
+                    'DEMO',
+                    color: Colors.pinkAccent,
+                  ),
                   onPressed: () {/* ... */},
                 ),
                 FlatButton(
-                  child: const NormalText('SHARE'),
+                  child: const NormalText(
+                    'SHARE',
+                    color: Colors.pinkAccent,
+                  ),
                   onPressed: () {/* ... */},
                 ),
               ],

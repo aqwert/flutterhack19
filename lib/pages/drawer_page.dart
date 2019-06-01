@@ -13,6 +13,7 @@ class DrawerPage extends StatelessWidget {
           ),
           SizedBox(height: 30),
           FloatingActionButton.extended(
+            backgroundColor: Colors.pinkAccent,
             onPressed: () {
               Navigator.of(context).pop();
               Navigator.of(context).pop();
