@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fluffy/util.dart';
 import 'package:flutter_fluffy/widgets/bold_text.dart';
 import 'package:flutter_fluffy/widgets/normal_text.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -112,7 +113,7 @@ class _DetailPageState extends State<DetailPage> {
               height: 30,
             ),
             FloatingActionButton.extended(
-              backgroundColor: Colors.pinkAccent,
+              backgroundColor: appColor,
               icon: Icon(Icons.code),
               label: BoldText('VIEW REPOSITORY'),
               onPressed: () {
@@ -126,7 +127,7 @@ class _DetailPageState extends State<DetailPage> {
                           FlatButton(
                               child: const NormalText(
                                 'TAKE ME THERE',
-                                color: Colors.pinkAccent,
+                                color: appColor,
                               ),
                               onPressed: () async {
                                 _launchURL();

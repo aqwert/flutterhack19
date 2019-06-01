@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fluffy/pages/landing_page.dart';
+import 'package:flutter_fluffy/util.dart';
 
 class App extends StatelessWidget {
   @override
@@ -7,9 +8,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'Object Sans',
-        primaryColor:
-            Color(0xFFBB86FC), //Colors.pinkAccent, // only if Brightness.normal
-        //accentColor: Colors.pink,
+        primaryColor: appColor, //only if Brightness.normal
         //brightness: Brightness.dark,
       ),
       home: LandingPage(),

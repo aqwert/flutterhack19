@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fluffy/pages/detail_page.dart';
+import 'package:flutter_fluffy/util.dart';
 import 'package:flutter_fluffy/widgets/bold_text.dart';
 import 'package:flutter_fluffy/widgets/normal_text.dart';
 
@@ -86,14 +87,14 @@ class SearchCard extends StatelessWidget {
                 FlatButton(
                   child: NormalText(
                     'DEMO',
-                    color: Colors.pinkAccent,
+                    color: appColor,
                   ),
                   onPressed: () {/* ... */},
                 ),
                 FlatButton(
                   child: const NormalText(
                     'SHARE',
-                    color: Colors.pinkAccent,
+                    color: appColor,
                   ),
                   onPressed: () {/* ... */},
                 ),

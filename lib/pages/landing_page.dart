@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_fluffy/pages/search_page.dart';
+import 'package:flutter_fluffy/util.dart';
 import 'package:flutter_fluffy/widgets/bold_text.dart';
 import 'package:flutter_fluffy/widgets/normal_text.dart';
 
@@ -42,7 +43,7 @@ class LandingPage extends StatelessWidget {
                     color: Colors.black,
                   ),
                   label: Text("Getting Started"),
-                  backgroundColor: Colors.pinkAccent,
+                  backgroundColor: appColor,
                 ),
               ],
             ),
