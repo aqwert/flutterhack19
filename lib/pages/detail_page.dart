@@ -35,7 +35,7 @@ class DetailPage extends StatelessWidget {
             Image.asset(imageUrl),
             ListTile(
               leading: Icon(
-                Icons.widgets,
+                Icons.account_circle,
                 size: 36,
               ),
               title: BoldText(title),
@@ -60,19 +60,19 @@ class DetailPage extends StatelessWidget {
               ],
             ),
             ListTile(
-              leading: Icon(Icons.star, size: 24),
+              leading: Icon(Icons.calendar_today, size: 24),
               title: NormalText('Last updated 24/09/2019'),
             ),
             ListTile(
-              leading: Icon(Icons.star, size: 24),
+              leading: Icon(Icons.check_circle, size: 24),
               title: NormalText('Production ready'),
             ),
             ListTile(
-              leading: Icon(Icons.settings, size: 24),
+              leading: Icon(Icons.perm_device_information, size: 24),
               title: NormalText('Built with Flutter 1.5'),
             ),
             ListTile(
-              leading: Icon(Icons.settings, size: 24),
+              leading: Icon(Icons.devices, size: 24),
               title: NormalText('Built for Mobile, Web, Dektop'),
             ),
             SizedBox(
@@ -80,7 +80,7 @@ class DetailPage extends StatelessWidget {
             ),
             FloatingActionButton.extended(
               backgroundColor: Colors.pinkAccent,
-              icon: Icon(Icons.add),
+              icon: Icon(Icons.code),
               label: BoldText('VIEW REPOSITORY'),
               onPressed: () {
                 showDialog(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_fluffy/pages/drawer_page.dart';
 import 'package:flutter_fluffy/widgets/normal_text.dart';
+import 'package:flutter_fluffy/widgets/bold_text.dart';
 import 'package:flutter_fluffy/widgets/search_card.dart';
 
 class SearchPage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
-          title: const NormalText('Fluffy'),
+          title: const BoldText('Fluffy'),
           actions: <Widget>[
             IconButton(
               tooltip: 'Search',
@@ -42,29 +43,89 @@ class _SearchPageState extends State<SearchPage> {
         body: ListView(
           children: <Widget>[
             SearchCard(
-                title: 'TODO',
-                author: 'TODO',
+                title: 'Menu Widget',
+                author: 'Lei Huaraka',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/1.gif'),
             SearchCard(
-                title: 'TODO',
-                author: 'TODO',
+                title: 'Text Selector Popup',
+                author: 'Lindsey32',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/2.gif'),
             SearchCard(
-                title: 'TODO',
-                author: 'TODO',
+                title: 'Settings Widget',
+                author: 'Hiro Takami',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/3.gif'),
             SearchCard(
-                title: 'TODO',
-                author: 'TODO',
+                title: 'Selector Widget',
+                author: 'SuperLeetH4xor111213',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/4.gif'),
+            SearchCard(
+                title: 'Selector Widget',
+                author: 'Jon Kanter',
+                likes: 112,
+                shares: 12,
+                imageUrl: 'images/5.gif'),
+            SearchCard(
+                title: 'Selector Widget',
+                author: 'Chris',
+                likes: 112,
+                shares: 12,
+                imageUrl: 'images/6.gif'),
+            SearchCard(
+                title: 'Selector Widget',
+                author: 'Andy',
+                likes: 112,
+                shares: 12,
+                imageUrl: 'images/7.gif'),
+            SearchCard(
+                title: 'Menu Widget',
+                author: 'Lei Huaraka',
+                likes: 112,
+                shares: 12,
+                imageUrl: 'images/1.gif'),
+            SearchCard(
+                title: 'Text Selector Popup',
+                author: 'Lindsey32',
+                likes: 112,
+                shares: 12,
+                imageUrl: 'images/2.gif'),
+            SearchCard(
+                title: 'Settings Widget',
+                author: 'Hiro Takami',
+                likes: 112,
+                shares: 12,
+                imageUrl: 'images/3.gif'),
+            SearchCard(
+                title: 'Selector Widget',
+                author: 'SuperLeetH4xor111213',
+                likes: 112,
+                shares: 12,
+                imageUrl: 'images/4.gif'),
+            SearchCard(
+                title: 'Selector Widget',
+                author: 'Jon Kanter',
+                likes: 112,
+                shares: 12,
+                imageUrl: 'images/5.gif'),
+            SearchCard(
+                title: 'Selector Widget',
+                author: 'Chris',
+                likes: 112,
+                shares: 12,
+                imageUrl: 'images/6.gif'),
+            SearchCard(
+                title: 'Selector Widget',
+                author: 'Andy',
+                likes: 112,
+                shares: 12,
+                imageUrl: 'images/7.gif'),
           ],
         ),
         drawer: DrawerPage());
