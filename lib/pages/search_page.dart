@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_fluffy/pages/drawer_page.dart';
 import 'package:flutter_fluffy/widgets/search_card.dart';
 
 class SearchPage extends StatefulWidget {
@@ -16,98 +17,56 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
-      appBar: AppBar(
-        title: const Text('Fluffy'),
-        actions: <Widget>[
-          IconButton(
-            tooltip: 'Search',
-            icon: const Icon(Icons.search),
-            onPressed: () async {
-              final selected = await showSearch<String>(
-                context: context,
-                delegate: _delegate,
-              );
-              if (selected != null && selected != _lastValueSelected) {
-                setState(() {
-                  _lastValueSelected = selected;
-                });
-              }
-            },
-          ),
-        ],
-      ),
-      body: ListView(
-        children: <Widget>[
-          SearchCard(
-            title: 'TODO',
-            author: 'TODO',
-            likes: 112,
-            shares: 12,
-          ),
-          SearchCard(
-            title: 'TODO',
-            author: 'TODO',
-            likes: 112,
-            shares: 12,
-          ),
-          SearchCard(
-            title: 'TODO',
-            author: 'TODO',
-            likes: 112,
-            shares: 12,
-          ),
-          SearchCard(
-            title: 'TODO',
-            author: 'TODO',
-            likes: 112,
-            shares: 12,
-          ),
-        ],
-      ),
-      // body: Center(
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: <Widget>[
-      //       MergeSemantics(
-      //         child: Column(
-      //           mainAxisAlignment: MainAxisAlignment.center,
-      //           children: <Widget>[
-      //             Row(
-      //               mainAxisAlignment: MainAxisAlignment.center,
-      //               children: const <Widget>[
-      //                 Text('Press the '),
-      //                 Tooltip(
-      //                   message: 'search',
-      //                   child: Icon(
-      //                     Icons.search,
-      //                     size: 18.0,
-      //                   ),
-      //                 ),
-      //                 Text(' icon in the AppBar'),
-      //               ],
-      //             ),
-      //             const Text('and search for amazing widgets.'),
-      //           ],
-      //         ),
-      //       ),
-      //       const SizedBox(height: 64.0),
-      //       Text('Last selected integer: ${_lastValueSelected ?? 'NONE'}.'),
-      //     ],
-      //   ),
-      // ),
-      drawer: Drawer(
-        child: Column(
-          children: <Widget>[
-            Center(
-              child: Text(
-                'TODO',
-              ),
-            )
+        key: _scaffoldKey,
+        appBar: AppBar(
+          title: const Text('Fluffy'),
+          actions: <Widget>[
+            IconButton(
+              tooltip: 'Search',
+              icon: const Icon(Icons.search),
+              onPressed: () async {
+                final selected = await showSearch<String>(
+                  context: context,
+                  delegate: _delegate,
+                );
+                if (selected != null && selected != _lastValueSelected) {
+                  setState(() {
+                    _lastValueSelected = selected;
+                  });
+                }
+              },
+            ),
           ],
         ),
-      ),
-    );
+        body: ListView(
+          children: <Widget>[
+            SearchCard(
+              title: 'TODO',
+              author: 'TODO',
+              likes: 112,
+              shares: 12,
+            ),
+            SearchCard(
+              title: 'TODO',
+              author: 'TODO',
+              likes: 112,
+              shares: 12,
+            ),
+            SearchCard(
+              title: 'TODO',
+              author: 'TODO',
+              likes: 112,
+              shares: 12,
+            ),
+            SearchCard(
+              title: 'TODO',
+              author: 'TODO',
+              likes: 112,
+              shares: 12,
+            ),
+          ],
+        ),
+        drawer: DrawerPage());
   }
 }
 
