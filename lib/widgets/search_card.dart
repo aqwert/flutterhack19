@@ -52,14 +52,20 @@ class SearchCard extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 8),
                     child: Row(
                       children: <Widget>[
-                        Icon(Icons.star),
+                        Icon(
+                          Icons.star,
+                          size: 16,
+                        ),
                         NormalText('$likes'),
                       ],
                     ),
                   ),
                   Row(
                     children: <Widget>[
-                      Icon(Icons.share),
+                      Icon(
+                        Icons.share,
+                        size: 16,
+                      ),
                       NormalText('$shares'),
                     ],
                   )
