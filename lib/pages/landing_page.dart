@@ -9,7 +9,7 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: new BoxDecoration(color: Colors.black),
+        color: Colors.black,
         child: Container(
           margin: const EdgeInsets.only(top: 50.0, left: 20.0, right: 20.0),
           child: Column(children: <Widget>[
@@ -30,34 +30,19 @@ class LandingPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                RaisedButton(
-                  color: Colors.pinkAccent,
-                  padding: EdgeInsets.all(8.0),
-                  shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(30.0)),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Icon(
-                          Icons.search,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(2.0),
-                        child: BoldText('Get Started',
-                            color: Colors.black, size: 22),
-                      ),
-                    ],
-                  ),
+                FloatingActionButton.extended(
                   onPressed: () => Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (_) => SearchPage(),
                         ),
                       ),
+                  icon: Icon(
+                    Icons.search,
+                    color: Colors.black,
+                  ),
+                  label: Text("Getting Started"),
+                  backgroundColor: Colors.pinkAccent,
                 ),
               ],
             ),
