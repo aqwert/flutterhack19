@@ -16,7 +16,12 @@ class SearchCard extends StatelessWidget {
         onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => DetailPage(),
+                builder: (_) => DetailPage(
+                      title: title,
+                      author: author,
+                      likes: likes,
+                      shares: shares,
+                    ),
               ),
             ),
         child: Column(
