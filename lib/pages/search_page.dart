@@ -1,32 +1,242 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_fluffy/pages/detail_page.dart';
+import 'package:flutter_fluffy/widgets/search_card.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
+  @override
+  _SearchPageState createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  final _SearchItemsDelegate _delegate = _SearchItemsDelegate();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  String _lastValueSelected;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
-        title: Text('Flutter Fluffy'),
-      ),
-      body: Container(
-        child: Center(
-          child: Column(
-            children: <Widget>[
-              Text('TODO Search Page'),
-              FlatButton(
-                child: Text('Next'),
-                onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => DetailPage(),
-                      ),
-                    ),
-              ),
-            ],
+        title: const Text('Fluffy'),
+        actions: <Widget>[
+          IconButton(
+            tooltip: 'Search',
+            icon: const Icon(Icons.search),
+            onPressed: () async {
+              final selected = await showSearch<String>(
+                context: context,
+                delegate: _delegate,
+              );
+              if (selected != null && selected != _lastValueSelected) {
+                setState(() {
+                  _lastValueSelected = selected;
+                });
+              }
+            },
           ),
+        ],
+      ),
+      body: ListView(
+        children: <Widget>[
+          SearchCard(
+            title: 'TODO',
+            author: 'TODO',
+            likes: 112,
+            shares: 12,
+          ),
+          SearchCard(
+            title: 'TODO',
+            author: 'TODO',
+            likes: 112,
+            shares: 12,
+          ),
+          SearchCard(
+            title: 'TODO',
+            author: 'TODO',
+            likes: 112,
+            shares: 12,
+          ),
+          SearchCard(
+            title: 'TODO',
+            author: 'TODO',
+            likes: 112,
+            shares: 12,
+          ),
+        ],
+      ),
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: <Widget>[
+      //       MergeSemantics(
+      //         child: Column(
+      //           mainAxisAlignment: MainAxisAlignment.center,
+      //           children: <Widget>[
+      //             Row(
+      //               mainAxisAlignment: MainAxisAlignment.center,
+      //               children: const <Widget>[
+      //                 Text('Press the '),
+      //                 Tooltip(
+      //                   message: 'search',
+      //                   child: Icon(
+      //                     Icons.search,
+      //                     size: 18.0,
+      //                   ),
+      //                 ),
+      //                 Text(' icon in the AppBar'),
+      //               ],
+      //             ),
+      //             const Text('and search for amazing widgets.'),
+      //           ],
+      //         ),
+      //       ),
+      //       const SizedBox(height: 64.0),
+      //       Text('Last selected integer: ${_lastValueSelected ?? 'NONE'}.'),
+      //     ],
+      //   ),
+      // ),
+      drawer: Drawer(
+        child: Column(
+          children: <Widget>[
+            Center(
+              child: Text(
+                'TODO',
+              ),
+            )
+          ],
         ),
       ),
+    );
+  }
+}
+
+class _SearchItemsDelegate extends SearchDelegate<String> {
+  final List<String> _data = <String>["Animated Button", "Auto Complete"];
+  final List<String> _history = <String>["Animated Button", "Auto Complete"];
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      tooltip: 'Back',
+      icon: AnimatedIcon(
+        icon: AnimatedIcons.menu_arrow,
+        progress: transitionAnimation,
+      ),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final Iterable<String> suggestions = query.isEmpty
+        ? _history
+        : _data.where((String i) => '$i'.startsWith(query));
+
+    return _SuggestionList(
+      query: query,
+      suggestions: suggestions.map<String>((String i) => '$i').toList(),
+      onSelected: (String suggestion) {
+        query = suggestion;
+        showResults(context);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    if (query == null || !_data.contains(query)) {
+      return Center(
+        child: Text(
+          '"$query"\n is not a valid.\nTry again.',
+          textAlign: TextAlign.center,
+        ),
+      );
+    }
+
+    return ListView(
+      children: <Widget>[
+        SearchCard(
+          title: 'Potato Jelly Animation',
+          author: 'Lance Johnstone',
+          likes: 112,
+          shares: 12,
+        ),
+        SearchCard(
+          title: 'Cool button Animation',
+          author: 'Walter Lim',
+          likes: 3,
+          shares: 58,
+        ),
+        SearchCard(
+          title: 'Mic drop Animation',
+          author: 'Kayee Wong',
+          likes: 1,
+          shares: 9001,
+        ),
+      ],
+    );
+  }
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return <Widget>[
+      query.isEmpty
+          ? IconButton(
+              tooltip: 'Voice Search',
+              icon: const Icon(Icons.mic),
+              onPressed: () {
+                query = 'TODO: implement voice input';
+              },
+            )
+          : IconButton(
+              tooltip: 'Clear',
+              icon: const Icon(Icons.clear),
+              onPressed: () {
+                query = '';
+                showSuggestions(context);
+              },
+            ),
+    ];
+  }
+}
+
+class _SuggestionList extends StatelessWidget {
+  const _SuggestionList({this.suggestions, this.query, this.onSelected});
+
+  final List<String> suggestions;
+  final String query;
+  final ValueChanged<String> onSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+    return ListView.builder(
+      itemCount: suggestions.length,
+      itemBuilder: (BuildContext context, int i) {
+        final String suggestion = suggestions[i];
+        return ListTile(
+          leading: query.isEmpty ? const Icon(Icons.history) : const Icon(null),
+          title: RichText(
+            text: TextSpan(
+              text: suggestion.substring(0, query.length),
+              style:
+                  theme.textTheme.subhead.copyWith(fontWeight: FontWeight.bold),
+              children: <TextSpan>[
+                TextSpan(
+                  text: suggestion.substring(query.length),
+                  style: theme.textTheme.subhead,
+                ),
+              ],
+            ),
+          ),
+          onTap: () {
+            onSelected(suggestion);
+          },
+        );
+      },
     );
   }
 }
