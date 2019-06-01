@@ -17,13 +17,13 @@ class DetailPage extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             tooltip: 'Like',
-            icon: const Icon(Icons.star),
+            icon: const Icon(Icons.thumb_up),
             onPressed: () => print('Like'),
           ),
           IconButton(
             tooltip: 'Share',
             icon: const Icon(Icons.share),
-            onPressed: () => print('Like'),
+            onPressed: () => print('Share'),
           ),
         ],
       ),
@@ -58,26 +58,26 @@ class DetailPage extends StatelessWidget {
               ],
             ),
             ListTile(
-              leading: Icon(Icons.star, size: 24),
+              leading: Icon(Icons.calendar_today, size: 24),
               title: Text('Last updated 24/09/2019'),
             ),
             ListTile(
-              leading: Icon(Icons.star, size: 24),
+              leading: Icon(Icons.perm_device_information, size: 24),
               title: Text('Production ready'),
             ),
             ListTile(
-              leading: Icon(Icons.settings, size: 24),
+              leading: Icon(Icons.code, size: 24),
               title: Text('Built with Flutter 1.5'),
             ),
             ListTile(
-              leading: Icon(Icons.settings, size: 24),
+              leading: Icon(Icons.devices, size: 24),
               title: Text('Built for Mobile, Web, Dektop'),
             ),
             SizedBox(
               height: 30,
             ),
             FloatingActionButton.extended(
-              icon: Icon(Icons.add),
+              icon: Icon(Icons.code),
               label: Text('VIEW REPOSITORY'),
               onPressed: () {
                 showDialog(
