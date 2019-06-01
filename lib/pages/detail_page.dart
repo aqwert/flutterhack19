@@ -31,7 +31,6 @@ class DetailPage extends StatelessWidget {
           children: <Widget>[
             Image.asset(
               'images/1.gif',
-              fit: BoxFit.fitWidth,
             ),
             ListTile(
               leading: Icon(
