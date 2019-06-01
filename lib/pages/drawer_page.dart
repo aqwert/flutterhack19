@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_fluffy/widgets/normal_text.dart';
 
 class DrawerPage extends StatelessWidget {
   @override
@@ -18,7 +18,7 @@ class DrawerPage extends StatelessWidget {
               Navigator.of(context).pop();
             },
             icon: Icon(Icons.info_outline),
-            label: Text('Back to Awsome'),
+            label: NormalText('Back to Awsome'),
           ),
         ],
       ),

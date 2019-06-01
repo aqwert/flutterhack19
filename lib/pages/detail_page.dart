@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fluffy/widgets/bold_text.dart';
+import 'package:flutter_fluffy/widgets/normal_text.dart';
 
 class DetailPage extends StatelessWidget {
   DetailPage({this.title, this.author, this.likes, this.shares, this.imageUrl});
@@ -13,7 +15,7 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Fluffy'),
+        title: NormalText('Fluffy'),
         actions: <Widget>[
           IconButton(
             tooltip: 'Like',
@@ -36,59 +38,59 @@ class DetailPage extends StatelessWidget {
                 Icons.widgets,
                 size: 36,
               ),
-              title: Text(title),
-              subtitle: Text(author),
+              title: BoldText(title),
+              subtitle: NormalText(author),
             ),
             Wrap(
               spacing: 8,
               runSpacing: 0,
               children: <Widget>[
                 Chip(
-                  label: Text('Potato'),
+                  label: NormalText('Potato'),
                 ),
                 Chip(
-                  label: Text('Jelly'),
+                  label: NormalText('Jelly'),
                 ),
                 Chip(
-                  label: Text('Mobile'),
+                  label: NormalText('Mobile'),
                 ),
                 Chip(
-                  label: Text('Onboarding'),
+                  label: NormalText('Onboarding'),
                 ),
               ],
             ),
             ListTile(
-              leading: Icon(Icons.calendar_today, size: 24),
-              title: Text('Last updated 24/09/2019'),
+              leading: Icon(Icons.star, size: 24),
+              title: NormalText('Last updated 24/09/2019'),
             ),
             ListTile(
-              leading: Icon(Icons.perm_device_information, size: 24),
-              title: Text('Production ready'),
+              leading: Icon(Icons.star, size: 24),
+              title: NormalText('Production ready'),
             ),
             ListTile(
-              leading: Icon(Icons.code, size: 24),
-              title: Text('Built with Flutter 1.5'),
+              leading: Icon(Icons.settings, size: 24),
+              title: NormalText('Built with Flutter 1.5'),
             ),
             ListTile(
-              leading: Icon(Icons.devices, size: 24),
-              title: Text('Built for Mobile, Web, Dektop'),
+              leading: Icon(Icons.settings, size: 24),
+              title: NormalText('Built for Mobile, Web, Dektop'),
             ),
             SizedBox(
               height: 30,
             ),
             FloatingActionButton.extended(
-              icon: Icon(Icons.code),
-              label: Text('VIEW REPOSITORY'),
+              icon: Icon(Icons.add),
+              label: NormalText('VIEW REPOSITORY'),
               onPressed: () {
                 showDialog(
                   context: context,
                   builder: (context) => AlertDialog(
-                        title: new Text("See Awesome"),
-                        content:
-                            new Text("Open the awesome code for this widget"),
+                        title: new BoldText("See Awesome"),
+                        content: new NormalText(
+                            "Open the awesome code for this widget"),
                         actions: <Widget>[
                           FlatButton(
-                            child: const Text('TAKE ME THERE'),
+                            child: const NormalText('TAKE ME THERE'),
                             onPressed: () => Navigator.of(context).pop(),
                           ),
                         ],

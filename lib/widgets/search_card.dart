@@ -52,14 +52,14 @@ class SearchCard extends StatelessWidget {
                     child: Row(
                       children: <Widget>[
                         Icon(Icons.star),
-                        Text('$likes'),
+                        NormalText('$likes'),
                       ],
                     ),
                   ),
                   Row(
                     children: <Widget>[
                       Icon(Icons.share),
-                      Text('$shares'),
+                      NormalText('$shares'),
                     ],
                   )
                 ],
@@ -72,11 +72,11 @@ class SearchCard extends StatelessWidget {
               alignment: MainAxisAlignment.start,
               children: <Widget>[
                 FlatButton(
-                  child: const Text('DEMO'),
+                  child: const NormalText('DEMO'),
                   onPressed: () {/* ... */},
                 ),
                 FlatButton(
-                  child: const Text('SHARE'),
+                  child: const NormalText('SHARE'),
                   onPressed: () {/* ... */},
                 ),
               ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_fluffy/pages/drawer_page.dart';
+import 'package:flutter_fluffy/widgets/normal_text.dart';
 import 'package:flutter_fluffy/widgets/search_card.dart';
 
 class SearchPage extends StatefulWidget {
@@ -19,7 +20,7 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
-          title: const Text('Fluffy'),
+          title: const NormalText('Fluffy'),
           actions: <Widget>[
             IconButton(
               tooltip: 'Search',

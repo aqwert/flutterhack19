@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_fluffy/pages/search_page.dart';
+import 'package:flutter_fluffy/widgets/bold_text.dart';
+import 'package:flutter_fluffy/widgets/normal_text.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -14,21 +16,14 @@ class LandingPage extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('Find & Share Flutter Widgets',
-                    style: new TextStyle(
-                        fontSize: 60.0,
-                        color: Colors.white,
-                        fontFamily: 'ObjectSans',
-                        fontWeight: FontWeight.bold)),
+                BoldText('Find & Share Flutter Widgets',
+                    size: 60, color: Colors.white),
                 Padding(
                   padding: EdgeInsets.only(top: 50.0, bottom: 50.0),
-                  child: Text(
+                  child: NormalText(
                       'Fluffy is a collection of awesome flutter widgets that help you build better things',
-                      style: new TextStyle(
-                        fontSize: 22.0,
-                        color: Colors.white,
-                        fontFamily: 'ObjectSans',
-                      )),
+                      size: 22.0,
+                      color: Colors.white),
                 ),
               ],
             ),
@@ -52,14 +47,8 @@ class LandingPage extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(2.0),
-                        child: Text(
-                          'Get Started',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22.0,
-                          ),
-                        ),
+                        child: BoldText('Get Started',
+                            color: Colors.black, size: 22),
                       ),
                     ],
                   ),
