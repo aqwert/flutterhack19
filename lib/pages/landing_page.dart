@@ -9,7 +9,7 @@ class LandingPage extends StatelessWidget {
       body: Container(
         child: Center(
           child: FlatButton(
-            child: Text('Next'),
+            child: Text('Next', style: TextStyle(fontFamily: 'Object Sans')),
             onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
