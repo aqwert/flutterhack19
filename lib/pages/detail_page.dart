@@ -81,7 +81,22 @@ class DetailPage extends StatelessWidget {
             FloatingActionButton.extended(
               icon: Icon(Icons.add),
               label: Text('VIEW REPOSITORY'),
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                        title: new Text("See Awesome"),
+                        content:
+                            new Text("Open the awesome code for this widget"),
+                        actions: <Widget>[
+                          FlatButton(
+                            child: const Text('TAKE ME THERE'),
+                            onPressed: () => Navigator.of(context).pop(),
+                          ),
+                        ],
+                      ),
+                );
+              },
             ),
             SizedBox(
               height: 30,
