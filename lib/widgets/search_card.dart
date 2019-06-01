@@ -41,7 +41,7 @@ class SearchCard extends StatelessWidget {
           ListTile(
             isThreeLine: true,
             leading: Icon(
-              Icons.widgets,
+              Icons.account_circle,
               size: 36,
             ),
             title: new BoldText(title),
