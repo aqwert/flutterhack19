@@ -12,13 +12,13 @@ class DrawerPage extends StatelessWidget {
             Image.asset('images/app_icon.png'),
             SizedBox(height: 30),
             FloatingActionButton.extended(
-              backgroundColor: Colors.pinkAccent,
+              backgroundColor: Color(0xFFBB86FC),
               onPressed: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).pop();
               },
               icon: Icon(Icons.info_outline),
-              label: NormalText('Back to Awsome'),
+              label: NormalText('Back to Awesome'),
             ),
           ],
         ),

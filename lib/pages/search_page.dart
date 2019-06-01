@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_fluffy/pages/drawer_page.dart';
-import 'package:flutter_fluffy/widgets/normal_text.dart';
 import 'package:flutter_fluffy/widgets/bold_text.dart';
 import 'package:flutter_fluffy/widgets/search_card.dart';
 
@@ -42,85 +41,85 @@ class _SearchPageState extends State<SearchPage> {
         ),
         body: ListView(
           children: <Widget>[
-            SearchCard(
+            SearchCard('1',
                 title: 'Menu Widget',
                 author: 'Lei Huaraka',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/1.gif'),
-            SearchCard(
+            SearchCard('2',
                 title: 'Text Selector Popup',
                 author: 'Lindsey32',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/2.gif'),
-            SearchCard(
+            SearchCard('3',
                 title: 'Settings Widget',
                 author: 'Hiro Takami',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/3.gif'),
-            SearchCard(
+            SearchCard('4',
                 title: 'Selector Widget',
                 author: 'SuperLeetH4xor111213',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/4.gif'),
-            SearchCard(
+            SearchCard('5',
                 title: 'Selector Widget',
                 author: 'Jon Kanter',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/5.gif'),
-            SearchCard(
+            SearchCard('6',
                 title: 'Selector Widget',
                 author: 'Chris',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/6.gif'),
-            SearchCard(
+            SearchCard('7',
                 title: 'Selector Widget',
                 author: 'Andy',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/7.gif'),
-            SearchCard(
+            SearchCard('8',
                 title: 'Menu Widget',
                 author: 'Lei Huaraka',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/1.gif'),
-            SearchCard(
+            SearchCard('9',
                 title: 'Text Selector Popup',
                 author: 'Lindsey32',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/2.gif'),
-            SearchCard(
+            SearchCard('10',
                 title: 'Settings Widget',
                 author: 'Hiro Takami',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/3.gif'),
-            SearchCard(
+            SearchCard('11',
                 title: 'Selector Widget',
                 author: 'SuperLeetH4xor111213',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/4.gif'),
-            SearchCard(
+            SearchCard('12',
                 title: 'Selector Widget',
                 author: 'Jon Kanter',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/5.gif'),
-            SearchCard(
+            SearchCard('13',
                 title: 'Selector Widget',
                 author: 'Chris',
                 likes: 112,
                 shares: 12,
                 imageUrl: 'images/6.gif'),
-            SearchCard(
+            SearchCard('14',
                 title: 'Selector Widget',
                 author: 'Andy',
                 likes: 112,
@@ -179,19 +178,19 @@ class _SearchItemsDelegate extends SearchDelegate<String> {
 
     return ListView(
       children: <Widget>[
-        SearchCard(
+        SearchCard('1a',
             title: 'Potato Jelly Animation',
             author: 'Lance Johnstone',
             likes: 112,
             shares: 12,
             imageUrl: 'images/5.gif'),
-        SearchCard(
+        SearchCard('2a',
             title: 'Cool button Animation',
             author: 'Walter Lim',
             likes: 3,
             shares: 58,
             imageUrl: 'images/6.gif'),
-        SearchCard(
+        SearchCard('3a',
             title: 'Mic drop Animation',
             author: 'Kayee Wong',
             likes: 1,

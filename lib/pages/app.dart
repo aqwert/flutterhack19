@@ -7,7 +7,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'Object Sans',
-        primaryColor: Colors.pinkAccent, // only if Brightness.normal
+        primaryColor:
+            Color(0xFFBB86FC), //Colors.pinkAccent, // only if Brightness.normal
         //accentColor: Colors.pink,
         //brightness: Brightness.dark,
       ),

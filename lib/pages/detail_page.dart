@@ -3,13 +3,20 @@ import 'package:flutter_fluffy/widgets/bold_text.dart';
 import 'package:flutter_fluffy/widgets/normal_text.dart';
 
 class DetailPage extends StatelessWidget {
-  DetailPage({this.title, this.author, this.likes, this.shares, this.imageUrl});
+  DetailPage(
+      {this.title,
+      this.author,
+      this.likes,
+      this.shares,
+      this.imageUrl,
+      this.id});
 
   final String title;
   final String author;
   final int likes;
   final int shares;
   final String imageUrl;
+  final String id;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +39,10 @@ class DetailPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Image.asset(imageUrl),
+            Hero(
+              tag: id,
+              child: Image.asset(imageUrl),
+            ),
             ListTile(
               leading: Icon(
                 Icons.account_circle,
